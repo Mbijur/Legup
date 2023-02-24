@@ -353,7 +353,18 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
 
     @Override
     public void onUndo(boolean isBottom, boolean isTop) {
-
+        undo.setEnabled(!isBottom);
+//        toolBarButtons[ToolbarName.UNDO.ordinal()].setEnabled(!isBottom);
+        redo.setEnabled(!isTop);
+//        toolBarButtons[ToolbarName.REDO.ordinal()].setEnabled(!isTop);
+        String puzzleName = GameBoardFacade.getInstance().getPuzzleModule().getName();
+        File puzzleFile = new File(GameBoardFacade.getInstance().getCurFileName());
+        if (isBottom) {
+            frame.setTitle(puzzleName + " - " + puzzleFile.getName());
+        }
+        else {
+            frame.setTitle(puzzleName + " - " + puzzleFile.getName() + " *");
+        }
     }
 
     @Override
