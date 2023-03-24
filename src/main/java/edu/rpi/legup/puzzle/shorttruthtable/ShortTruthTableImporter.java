@@ -195,7 +195,7 @@ class ShortTruthTableImporter extends PuzzleImporter {
                                List<ShortTruthTableStatement> statements) throws InvalidFileFormatException {
 
 
-        //if it is normal, set all predicats to true and the conclusion to false
+        //if it is normal, set all predicates to true and the conclusion to false
         if (dataElement.getAttribute("normal").equalsIgnoreCase("true")) {
             //set all predicates to true (all but the last one)
             for (int i = 0; i < statements.size() - 1; i++) {
