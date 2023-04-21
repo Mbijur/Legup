@@ -24,7 +24,7 @@ public class CreatePuzzleDialog extends JDialog {
     private ActionListener okButtonListener = new ActionListener() {
         /**
          * Attempts to open the puzzle editor interface for the given game with the given dimensions
-         * @param e the event to be processed
+         * @param ae the event to be processed
          */
         @Override
         public void actionPerformed(ActionEvent ae) {
